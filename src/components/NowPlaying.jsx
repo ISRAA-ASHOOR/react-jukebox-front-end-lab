@@ -1,4 +1,4 @@
-const TrackDetail = (props) => {
+const NowPlaying = (props) => {
     if (!props.selected)
       return (
         <div>
@@ -11,8 +11,16 @@ const TrackDetail = (props) => {
         <h1>Now playing:</h1>
         <p><strong>Title:</strong> {props.selected.title}</p>
         <p><strong>Artist:</strong> {props.selected.artist}</p>
+        <div>
+        <button onClick={() => props.handleFormView(props.selected)}>
+          Edit
+        </button>
+        <button onClick={() => props.handleRemoveTrack(props.selected._id)}>
+          Delete
+        </button>
+      </div>
       </div>
     );
 };
   
-export default TrackDetail;
+export default  NowPlaying;
